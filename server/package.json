@@ -26,5 +26,5 @@
     "socket.io": "^4.7.5",
     "twilio": "^5.3.0"
   },
-  "proxy": "https://biz-convo-app-server.vercel.app"
+  "proxy": "https://biz-convo-app-backend.vercel.app"
 }
