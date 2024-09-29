@@ -48,7 +48,7 @@ const Login = () => {
     if (verifying) {
       // Verify OTP step
       try {
-        const response = await axios.post(`${process.env.REACT_APP_BACKEND_BASE_URL}/api/auth/login`, {
+        const response = await axios.post(`https://biz-convo-app-server.vercel.app/api/auth/login`, {
           email: email,
           otp: otp,
         }, {
@@ -76,7 +76,7 @@ const Login = () => {
     } else {
       // Send OTP step
       try {
-        const response = await axios.post(`${process.env.REACT_APP_BACKEND_BASE_URL}/api/auth/login-email`, {
+        const response = await axios.post(`https://biz-convo-app-server.vercel.app/api/auth/login-email`, {
           email: email,
         }, {
           headers: {
@@ -84,7 +84,7 @@ const Login = () => {
           },
         });
         console.log(response);
-        if (response.statusText === 'OK') {
+        if (response.data) {
           setVerifying(true); // Set verifying to true after sending OTP
         }
       } catch (error) {
