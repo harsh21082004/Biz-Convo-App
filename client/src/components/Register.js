@@ -76,7 +76,7 @@ const Register = () => {
     if (isVerified) {
       // User is verified, proceed with registration
       try {
-        const response = await axios.post(`https://biz-convo-app-server.vercel.app/api/auth/register`, data, {
+        const response = await axios.post(`https://biz-convo-app-backend.vercel.app/api/auth/register`, data, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -99,7 +99,7 @@ const Register = () => {
     } else if (verifying) {
       // Verify OTP step
       try {
-        const response = await axios.post(`https://biz-convo-app-server.vercel.app/api/auth/verify-otp`, {
+        const response = await axios.post(`https://biz-convo-app-backend.vercel.app/api/auth/verify-otp`, {
           email: formData.email,
           otp: formData.otp,
         });
@@ -123,7 +123,7 @@ const Register = () => {
     } else {
       // Send OTP step
       try {
-        const response = await axios.post(`https://biz-convo-app-server.vercel.app/api/auth/register-email`, {
+        const response = await axios.post(`https://biz-convo-app-backend.vercel.app/api/auth/register-email`, {
           email: formData.email,
         });
 
