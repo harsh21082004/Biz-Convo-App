@@ -127,7 +127,7 @@ const Register = () => {
           email: formData.email,
         });
 
-        console.log(response.data);
+        console.log(response);
 
         if (response.statusText === 'OK') {
           setVerifying(true); // Set verifying to true after sending OTP
