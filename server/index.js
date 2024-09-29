@@ -21,21 +21,19 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'https://biz-convo-app.vercel.app', // Update with your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: 'https://biz-convo-app.vercel.app', // Replace with your frontend URL
   credentials: true
 }));
 
 
 // Explicitly handle preflight requests
-app.options('*', (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://biz-convo-app.vercel.app'); // Update with your frontend URL
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.sendStatus(204);
-});
+// app.options('*', (req, res) => {
+//   res.setHeader('Access-Control-Allow-Origin', 'https://biz-convo-app.vercel.app'); // Update with your frontend URL
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//   res.setHeader('Access-Control-Allow-Credentials', 'true');
+//   res.sendStatus(204);
+// });
 app.use(express.json());
 
 app.use('/uploads', express.static(path.join(__dirname, '../client/public/uploads')));
