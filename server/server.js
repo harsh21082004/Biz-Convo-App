@@ -27,6 +27,11 @@ app.use('/uploads', express.static(path.join(__dirname, '../client/public/upload
 
 
 // Routes
+
+app.get("/", (req, res) => {
+  res.json("Hello");
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/conversation', conversationRoutes);
@@ -37,3 +42,5 @@ chatSockets(io);
 // Start server
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+module.exports = app;
