@@ -84,7 +84,7 @@ const Register = () => {
 
         console.log(response.data);
 
-        if (response.statusText === 'OK') {
+        if (response.data) {
           const res = response.data;
           localStorage.setItem('token', res.token);
           localStorage.removeItem('user');
@@ -129,7 +129,7 @@ const Register = () => {
 
         console.log(response);
 
-        if (response.statusText === 'OK') {
+        if (response.data) {
           setVerifying(true); // Set verifying to true after sending OTP
         }
       } catch (error) {
