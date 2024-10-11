@@ -20,10 +20,7 @@ const io = socketio(server);
 connectDB();
 
 // Middleware
-app.use(cors({
-  origin: 'https://biz-convo-app.vercel.app', // Replace with your frontend URL
-  credentials: true
-}));
+app.use(cors());
 
 
 // Explicitly handle preflight requests
